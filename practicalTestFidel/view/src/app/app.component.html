@@ -1,0 +1,22 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a routerLink="login" class="navbar-brand">Test Fidel David Jiménez</a>
+    <div *ngIf="isUserLoggedIn()" class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="encuestas" class="nav-link">Consultar respuestas</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="crear" class="nav-link">Formulario encuesta</a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="logout" class="nav-link">Cerrar sesión</a>
+      </li>
+
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>

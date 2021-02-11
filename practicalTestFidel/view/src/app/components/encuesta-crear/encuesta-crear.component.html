@@ -1,0 +1,58 @@
+<div style="width: 400px; margin: auto;">
+
+  <h4>Crear Encuesta</h4>
+
+  <div class="submit-form" style="margin-top: 25px;">
+    <div *ngIf="!creado">
+      <div class="form-group">
+        <label for="documento">Número de documento</label>
+        <input
+          type="text"
+          class="form-control"
+          id="documento"
+          required
+          [(ngModel)]="encuesta.documento"
+          name="documento"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          class="form-control"
+          id="email"
+          required
+          [(ngModel)]="encuesta.email"
+          name="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="comentarios">Comentarios</label>
+        <input
+          class="form-control"
+          id="comentarios"
+          required
+          [(ngModel)]="encuesta.comentarios"
+          name="comentarios"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="marca">Marca favorita de pc</label>
+        <select id="marca" [(ngModel)]="encuesta.marca.id" class="form-control" required name="marca">
+
+          <option *ngFor="let iMarca of marcas; let i = index" value="{{iMarca.id}}">{{iMarca.nombre}}</option>
+        </select>
+      </div>
+
+      <button (click)="guardarEncuesta()" class="btn btn-success">Guardar</button>
+
+    </div>
+
+    <div *ngIf="creado">
+      <h4>Se ha guardado la encuesta correctamente</h4>
+    </div>
+  </div>
+
+</div>

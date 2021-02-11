@@ -1,0 +1,65 @@
+<div class="container">
+
+  <h4 style="margin-top: 20px">Lista de Encuestas</h4>
+
+  <div class="list row">
+
+    <div class="col-md-6">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let iEncuesta of encuestas; let i = index">
+          {{ iEncuesta.id }} - fecha: {{iEncuesta.fecha | date : 'yyyy-MM-dd HH:mm:ss'}}
+          <div style="float: right;">
+            <button style="margin-right:10px;" (click)="setEncuesta(iEncuesta)" class="btn btn-info">Ver
+              detalle
+            </button>
+            <button style="margin-right:10px;" (click)="eliminarEncuesta(iEncuesta)" class="btn btn-danger">
+              Eliminar
+            </button>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="col-md-6">
+      <div *ngIf="encuestaSeleccionada">
+        <h4>Encuesta</h4>
+        <div>
+          <label>Número encuesta:</label> {{ encuestaSeleccionada.id }}
+        </div>
+        <div>
+          <label>Número documento:</label>
+          {{ encuestaSeleccionada.documento }}
+        </div>
+        <div>
+          <label>Email:</label>
+          {{ encuestaSeleccionada.email}}
+        </div>
+
+        <div>
+          <label>Comentarios:</label>
+          {{ encuestaSeleccionada.comentarios}}
+        </div>
+
+        <div>
+          <label>Marca favorita de pc:</label>
+          {{ encuestaSeleccionada.marca.nombre}}
+        </div>
+
+        <div>
+          <label>Fecha de respuesta:</label>
+          {{ encuestaSeleccionada.fecha | date : 'yyyy-MM-dd HH:mm:ss'}}
+        </div>
+
+      </div>
+
+      <div *ngIf="!encuestaSeleccionada">
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+

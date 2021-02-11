@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\encuesta-listar",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\services\\encuestas.service.ts",
+  "PreviewInSolutionExplorer": false
+}
